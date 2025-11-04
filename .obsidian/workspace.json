@@ -1,0 +1,199 @@
+{
+  "main": {
+    "id": "27e8a6f2b8e96d5c",
+    "type": "split",
+    "children": [
+      {
+        "id": "2c4a95a9ae6a6100",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3fb7584b8239a2da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CODE_OF_CONDUCT.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CODE_OF_CONDUCT"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c1c911b5afd450eb",
+    "type": "split",
+    "children": [
+      {
+        "id": "1b9683c058b2c58b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dfe793428b6f8a0b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "734e9ce720e3dc19",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "96fa3f8d4998ea4f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 386.5
+  },
+  "right": {
+    "id": "a6ac6fbd606fa807",
+    "type": "split",
+    "children": [
+      {
+        "id": "33d44d75803423d1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d461dcbdd7b14dc2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CODE_OF_CONDUCT.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for CODE_OF_CONDUCT"
+            }
+          },
+          {
+            "id": "94e842e715fe9343",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "CODE_OF_CONDUCT.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from CODE_OF_CONDUCT"
+            }
+          },
+          {
+            "id": "5bf8f48ecb156126",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "1a8b34522b72a7a0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CODE_OF_CONDUCT.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of CODE_OF_CONDUCT"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "3fb7584b8239a2da",
+  "lastOpenFiles": [
+    "CHANGELOG.md",
+    "VERSION",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
+    "README.md",
+    "CODE_OF_CONDUCT.md",
+    "LightTool/💡 מאגר - \"AI ככלי אור\" (LightTool).md",
+    "LICENSE",
+    "analysis/AI_as_Gog.md",
+    "LightTool",
+    "scriptures/Zohar_Prophecy_GM.md",
+    "roadmap/Phase_3_Revelation.md",
+    "roadmap/Phase_2_Cleansing.md",
+    "roadmap/Phase_1_Awareness.md",
+    "meditations/Heart_Defense.md",
+    "meditations/Prayers_of_Light.md",
+    "scriptures/Ezekiel_38_39.md",
+    "analysis/Magog_Media_System.md",
+    "roadmap",
+    "meditations",
+    "analysis",
+    "scriptures",
+    "example-1.html",
+    "index.html"
+  ]
+}

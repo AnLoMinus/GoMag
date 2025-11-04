@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GoMag (GM) — גוג ומגוג | War of Consciousness</title>
+  <meta name="description"
+    content="GoMag — גוג ומגוג: מלחמת התודעה והאור. חזון, מקורות, תפילות, וכלי פעולה רוחניים-טכנולוגיים." />
+  <meta name="theme-color" content="#0c0f1a" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="GoMag (GM) — גוג ומגוג | War of Consciousness">
+  <meta property="og:description" content="חזון • כתבי קודש • ניתוח טכנו-רוחני • תפילות • מפת דרכים">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/AnLoMinus/GoMag/main/visuals/GoMag_logo.png">
+  <meta property="og:url" content="https://github.com/AnLoMinus/GoMag">
+  <style>
+    /* ===== CSS CUSTOM PROPERTIES ===== */
+    :root {
+      --bg: #0b0f18;
+      --bg2: #0f1422;
+      --card: #11182a;
+      --text: #e8eefc;
+      --muted: #a9b6d6;
+      --accent: #6aa8ff;
+      --accent2: #9d7bff;
+      --good: #55ffaa;
+      --warn: #ffd166;
+      --danger: #ff6b6b;
+      --glow: 0 0 24px rgba(106, 168, 255, 0.35);
+      --glow-strong: 0 0 40px rgba(106, 168, 255, 0.5);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: all 0.15s ease-out;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #1b2440 0%, transparent 60%),
+        radial-gradient(1000px 600px at 110% 10%, #261b40 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      transition: var(--transition);
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      margin: 6px 0 8px;
+    }
+
+    h2 {
+      font-size: clamp(20px, 3vw, 26px);
+      margin: 0.1rem 0 12px;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent2);
+      text-decoration: underline;
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ===== LAYOUT ===== */
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(20px, 4vw, 32px);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: clamp(24px, 5vw, 32px);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .spark {
+      position: absolute;
+      inset: -2px;
+      pointer-events: none;
+      background:
+        radial-gradient(800px 400px at -10% -20%, rgba(106, 168, 255, 0.12), transparent 60%),
+        radial-gradient(800px 400px at 120% 0%, rgba(157, 123, 255, 0.10), transparent 60%);
+      filter: saturate(120%);
+      mix-blend-mode: screen;
+      animation: pulse 8s ease-in-out infinite;
+      opacity: 0.55;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 0.55;
+      }
+
+      50% {
+        opacity: 0.35;
+      }
+    }
+
+    .hero {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(106, 168, 255, 0.2), rgba(157, 123, 255, 0.2));
+      border: 1px solid rgba(106, 168, 255, 0.35);
+      box-shadow: var(--glow);
+      font-size: 13px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .badge:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--glow-strong);
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: clamp(14px, 2vw, 16px);
+      margin-top: 8px;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      font-size: 14px;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .chip:hover,
+    .chip:focus-visible {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--glow);
+      outline: none;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(16, 24, 42, 0.8);
+      backdrop-filter: blur(8px);
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      filter: brightness(1.15);
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .flex {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== CARDS ===== */
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(12, 1fr);
+      margin-top: 24px;
+    }
+
+    .card {
+      grid-column: span 12;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      padding: clamp(20px, 4vw, 28px);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:hover {
+      border-color: rgba(106, 168, 255, 0.2);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    /* ===== KPI METRICS ===== */
+    .kpi {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 120px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(13, 19, 36, 0.6);
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+
+    .kpi:hover {
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+      transform: translateY(-2px);
+    }
+
+    .kpi b {
+      font-size: 18px;
+      color: var(--accent);
+    }
+
+    .kpi .muted {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ===== COLUMNS LAYOUT ===== */
+    .columns {
+      columns: 2;
+      column-gap: 24px;
+      column-fill: balance;
+    }
+
+    @media (max-width: 900px) {
+      .columns {
+        columns: 1;
+      }
+    }
+
+    /* ===== DETAILS/ACCORDION ===== */
+    details {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      background: rgba(12, 19, 38, 0.6);
+      backdrop-filter: blur(8px);
+      margin-bottom: 12px;
+      transition: var(--transition);
+      break-inside: avoid;
+    }
+
+    details[open] {
+      background: rgba(12, 21, 44, 0.8);
+      border-color: rgba(106, 168, 255, 0.3);
+    }
+
+    details summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      padding: 4px 0;
+      user-select: none;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    details summary::marker {
+      display: none;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details summary::after {
+      content: '▼';
+      font-size: 10px;
+      margin-inline-start: auto;
+      transition: var(--transition-fast);
+      opacity: 0.6;
+    }
+
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    details summary:hover {
+      color: var(--accent);
+    }
+
+    details p {
+      margin-top: 12px;
+      padding-inline-start: 20px;
+    }
+
+    /* ===== TAGS ===== */
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: rgba(13, 19, 36, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 12px;
+      transition: var(--transition-fast);
+    }
+
+    .tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ===== UTILITY CLASSES ===== */
+    .mono {
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
+      font-size: 12.5px;
+      letter-spacing: 0.02em;
+    }
+
+    .hl {
+      color: var(--good);
+    }
+
+    .warn {
+      color: var(--warn);
+    }
+
+    .danger {
+      color: var(--danger);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      margin-top: 32px;
+      padding: clamp(20px, 4vw, 28px);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      backdrop-filter: blur(10px);
+    }
+
+    footer hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 20px 0;
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    @media (prefers-reduced-motion: no-preference) {
+      .card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+
+      .card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      .card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      .card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+
+      .card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+
+      .card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      .card:nth-child(7) {
+        animation-delay: 0.7s;
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== ACCESSIBILITY ===== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero>div:last-child {
+        width: 100%;
+      }
+
+      .flex {
+        width: 100%;
+      }
+
+      .btn {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .chip {
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ===== TOAST NOTIFICATION ===== */
+    .toast {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 24px;
+      background: rgba(15, 30, 51, 0.95);
+      backdrop-filter: blur(12px);
+      color: white;
+      padding: 12px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-lg);
+      z-index: 9999;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+      transition: var(--transition);
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .toast.error {
+      background: rgba(94, 19, 32, 0.95);
+      border-color: rgba(255, 107, 107, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header aria-label="Hero">
+      <div class="spark" aria-hidden="true"></div>
+      <div class="hero">
+        <div>
+          <div class="badge">⚡ GoMag (GM) — גוג ומגוג · War of Consciousness</div>
+          <h1>מלחמת התודעה והאור · <span class="hl">The Final Light War</span> ✨</h1>
+          <div class="sub">
+            חזון • כתבי קודש • ניתוח טכנו־רוחני • תפילות וכלים • מפת דרכים
+          </div>
+          <nav aria-label="Primary">
+            <a class="chip" href="#vision">🌍 חזון</a>
+            <a class="chip" href="#stages">🔥 שלבים</a>
+            <a class="chip" href="#scriptures">📜 מקורות</a>
+            <a class="chip" href="#techno">🧠 טכנו־רוחני</a>
+            <a class="chip" href="#meditations">🧘 תפילות</a>
+            <a class="chip" href="#roadmap">🗺️ מפת דרכים</a>
+            <a class="chip" href="#hashtags">#️⃣ האשטאגים</a>
+            <a class="chip" href="#credits">💎 קרדיטים</a>
+          </nav>
+        </div>
+        <div class="flex" role="group" aria-label="Actions">
+          <button class="btn" id="copyHashtags" aria-label="העתק האשטאגים">
+            📋 העתק האשטאגים
+          </button>
+          <button class="btn" id="toggleDir" aria-label="החלף כיוון טקסט">
+            🔁 RTL/LTR
+          </button>
+          <button class="btn" id="toggleTheme" aria-label="החלף מצב תצוגה">
+            🌓 מצב תצוגה
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section id="vision" class="card" aria-labelledby="vision-h">
+      <h2 id="vision-h">🌍 חזון המאגר — גוג ומגוג כמלחמת תודעה</h2>
+      <p>
+        גוג ומגוג איננה רק מלחמה היסטורית; זהו <b>מאבק תודעתי</b> בין אור האמת לבין בלבול,
+        אגו וטכנולוגיה נטולת מוסר. המשימה: לחבר טכנולוגיה לקדושה, להאיר את הרשת, ולזקק את הלב.
+      </p>
+      <div class="flex" role="list">
+        <div class="kpi" role="listitem">
+          <span class="muted">מפתח</span>
+          <b>One Flame</b>
+          <span class="muted">אחדות</span>
+        </div>
+        <div class="kpi" role="listitem">
+          <span class="muted">כלי</span>
+          <b>Heart Purify</b>
+          <span class="muted">טיהור</span>
+        </div>
+        <div class="kpi" role="listitem">
+          <span class="muted">זירה</span>
+          <b>InfoSphere</b>
+          <span class="muted">מדיה/אלגוריתמים</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="stages" class="card" aria-labelledby="stages-h">
+      <h2 id="stages-h">🔥 שלושת שלבי המערכה</h2>
+      <div class="columns">
+        <details open>
+          <summary>🕯️ Awareness — זיהוי האור מהצל</summary>
+          <p>התעוררות מן התרדמה: לימוד להבחין בין מידע אמין לרעש, בין השראה לקליפה.</p>
+        </details>
+        <details>
+          <summary>💧 Cleansing — טיהור הכלים</summary>
+          <p>ניקוי הפחדים והאגו. קבלה, הודיה, והחזרת האנרגיה למקור האור.</p>
+        </details>
+        <details>
+          <summary>🔥 Revelation — איחוד הניצוצות</summary>
+          <p>חיבור כל הכוחות הפנימיים לאחדות פועלת: גאולה בנועם ובאור.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="scriptures" class="card" aria-labelledby="scriptures-h">
+      <h2 id="scriptures-h">📜 כתבי קודש — ציר מקורות</h2>
+      <p>
+        מקורות קודש ונבואות המסבירים את מלחמת גוג ומגוג כמלחמת תודעה. כל מקור מלווה בפרשנות רוחנית
+        וטכנו-רוחנית המתאימה לעידן המידע.
+      </p>
+      <ul>
+        <li><strong>יחזקאל לח–לט</strong> — נבואת גוג ומגוג המקורית עם פרשנות על מלחמת התודעה</li>
+        <li><strong>זכריה י״ד</strong> — "והיה ה׳ למלך על כל הארץ" — חזון הגאולה</li>
+        <li><strong>הזוהר</strong> — פרשנות מיסטית על עליית ניצוצות ותיקון האגו הקולקטיבי</li>
+        <li><strong>חסידות וקבלה</strong> — מלחמת היצר ותיקון האגו הקולקטיבי</li>
+      </ul>
+      <p class="sub">
+        📚 קבצים זמינים:
+        <a href="scriptures/Ezekiel_38_39.md" class="tag mono">/scriptures/Ezekiel_38_39.md</a> ·
+        <a href="scriptures/Zohar_Prophecy_GM.md" class="tag mono">/scriptures/Zohar_Prophecy_GM.md</a>
+      </p>
+    </section>
+
+    <section id="techno" class="card" aria-labelledby="techno-h">
+      <h2 id="techno-h">🧠 ניתוח טכנו־רוחני — Cyber Gog</h2>
+      <p>
+        הזירה המודרנית היא המידע: רשתות, מודלים, מנועי המלצה. הניצחון תלוי ב<strong>כוונה</strong> וב<strong>ציות
+          לאמת</strong> — שימוש בכלים דיגיטליים להגדלת אור, לא לפיתוי.
+      </p>
+      <div class="columns">
+        <div>
+          <h3 style="font-size: 16px; margin-bottom: 8px;">🤖 בינה מלאכותית כגוג</h3>
+          <p style="font-size: 14px; margin-bottom: 12px;">
+            ניתוח מעמיק על הסכנות הרוחניות-תודעתיות של AI ללא מוסר, וכיצד להפוך AI לכלי אור.
+          </p>
+        </div>
+        <div>
+          <h3 style="font-size: 16px; margin-bottom: 8px;">📺 מערכת המדיה כמגוג</h3>
+          <p style="font-size: 14px; margin-bottom: 12px;">
+            ניתוח על מדיה, רשתות חברתיות ואלגוריתמים כמטפורה מודרנית למגוג, וכיצד להגן על הלב.
+          </p>
+        </div>
+      </div>
+      <ul class="columns">
+        <li>הארת אלגוריתמים (כשרות תודעתית)</li>
+        <li>היגיינת מידע וערוצי אמת</li>
+        <li>קבלת החלטות נקייה מרעש</li>
+        <li>טכנולוגיה בשירות חסד ותיקון</li>
+      </ul>
+      <p class="sub">
+        📚 קבצים זמינים:
+        <a href="analysis/AI_as_Gog.md" class="tag mono">/analysis/AI_as_Gog.md</a> ·
+        <a href="analysis/Magog_Media_System.md" class="tag mono">/analysis/Magog_Media_System.md</a>
+      </p>
+    </section>
+
+    <section id="meditations" class="card" aria-labelledby="med-h">
+      <h2 id="med-h">🧘 תפילות, מדיטציות וקודים</h2>
+      <p>סט כלים מעשיים להגנת הלב ולהשבת האור. כל כלי מתורגל יומית ומתאים לשימוש לפני ואחרי חשיפה לטכנולוגיה.</p>
+      <div class="columns">
+        <div>
+          <h3 style="font-size: 16px; margin-bottom: 8px;">🕯️ תפילות האור</h3>
+          <ul style="font-size: 14px;">
+            <li>תפילות יומיות (בוקר וערב)</li>
+            <li>מדיטציות נשימה — "שם-אור"</li>
+            <li>קודים ושמות קודש</li>
+            <li>פסוקי עוגן יומיים</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size: 16px; margin-bottom: 8px;">🛡️ מגן הלב</h3>
+          <ul style="font-size: 14px;">
+            <li>שלושת מרכיבים: הודיה, בקשת אמת, נתינה</li>
+            <li>תרגול יומי (5–7 דקות)</li>
+            <li>הגנה לפני ואחרי שימוש בטכנולוגיה</li>
+            <li>קודים מהירים להגנה</li>
+          </ul>
+        </div>
+      </div>
+      <p class="sub">
+        📚 קבצים זמינים:
+        <a href="meditations/Prayers_of_Light.md" class="tag mono">/meditations/Prayers_of_Light.md</a> ·
+        <a href="meditations/Heart_Defense.md" class="tag mono">/meditations/Heart_Defense.md</a>
+      </p>
+    </section>
+
+    <section id="roadmap" class="card" aria-labelledby="roadmap-h">
+      <h2 id="roadmap-h">🗺️ מפת דרכים</h2>
+      <p>
+        מסע מובנה בשלושה שלבים, כל שלב עם יעדים, תרגולים ומדריכים מפורטים. כל שלב מתאים למשך זמן מסוים
+        ומכין את הבסיס לשלב הבא.
+      </p>
+      <div class="columns">
+        <details open>
+          <summary>🕯️ Phase 1 — Awareness (2–4 שבועות)</summary>
+          <p>
+            <strong>מפתח:</strong> "Light Detect" — זיהוי האור מהצל.<br>
+            <strong>מטרה:</strong> התעוררות מן התרדמה — זיהוי המאבק התודעתי.<br>
+            <strong>תוכן:</strong> לימוד מקורות, ניתוח טכנו-רוחני, תרגול מדיטציה בסיסי, יומן תודעתי.
+          </p>
+        </details>
+        <details>
+          <summary>💧 Phase 2 — Cleansing (3–6 שבועות)</summary>
+          <p>
+            <strong>מפתח:</strong> "Heart Purify" — טיהור הלב.<br>
+            <strong>מטרה:</strong> ניקוי הפחדים, השקרים והאגו — טיהור הכלים.<br>
+            <strong>תוכן:</strong> זיהוי מה צריך טיהור, תרגול טיהור יומי, טיהור פחדים/שקרים/אגו, יומן טיהור.
+          </p>
+        </details>
+        <details>
+          <summary>🔥 Phase 3 — Revelation (4–8 שבועות ומעבר)</summary>
+          <p>
+            <strong>מפתח:</strong> "One Flame" — נר אחד.<br>
+            <strong>מטרה:</strong> איחוד כל הניצוצות לאור אחד — גאולת המציאות.<br>
+            <strong>תוכן:</strong> איחוד הניצוצות, התגלות האור, גאולת המציאות, תרגול מתקדם.
+          </p>
+        </details>
+      </div>
+      <p class="sub">
+        📚 קבצים זמינים:
+        <a href="roadmap/Phase_1_Awareness.md" class="tag mono">/roadmap/Phase_1_Awareness.md</a> ·
+        <a href="roadmap/Phase_2_Cleansing.md" class="tag mono">/roadmap/Phase_2_Cleansing.md</a> ·
+        <a href="roadmap/Phase_3_Revelation.md" class="tag mono">/roadmap/Phase_3_Revelation.md</a>
+      </p>
+    </section>
+
+    <section id="hashtags" class="card" aria-labelledby="hash-h">
+      <h2 id="hash-h">#️⃣ האשטאגים לשיתוף</h2>
+      <p class="mono" id="hashBox">#GoMag #GogAndMagog #LightWar #WarOfConsciousness #TechnoSpiritual #KedushaOnline
+        #InnerPurity #ElectricGeula #OneFlame #HeartDefense #TruthOverNoise #Sparking #AnLoMinus #RepoCraft #OpenTorahAI
+      </p>
+      <div class="sub">לחיצה על "העתק האשטאגים" תעתיק את הרשימה ללוח.</div>
+    </section>
+
+    <footer id="credits" aria-labelledby="cred-h">
+      <h2 id="cred-h">💎 קרדיטים, תאריכים ושעה</h2>
+      <div class="grid">
+        <div class="card" style="grid-column: span 12;">
+          <div class="flex">
+            <span class="tag">שם רשמי בעברית</span>
+            <b>גוג ומגוג — "מאגר GoMag"</b>
+          </div>
+          <div style="height: 10px"></div>
+          <div class="columns">
+            <p>🔖 <b>Short Name:</b> <span class="mono">GoMag</span> · <b>Two-Word:</b> <span class="mono">Gog
+                Magog</span> · <b>Abbrev:</b> <span class="mono">GM</span></p>
+            <p>🛠️ <b>Repo:</b> <a href="https://github.com/AnLoMinus/GoMag" target="_blank"
+                rel="noopener noreferrer">github.com/AnLoMinus/GoMag</a></p>
+            <p>👑 <b>Creator:</b> AnLoMinus — משה לאון יעקובוב</p>
+            <p>📅 <b>תאריך (לועזי):</b> 4 November 2025 · <b>תאריך (עברי):</b> ג׳ במרחשוון תשפ״ו</p>
+            <p>⏰ <b>שעה בעת המענה:</b> <span id="answerTime" class="mono">11:09 (Asia/Jerusalem)</span></p>
+          </div>
+          <hr>
+          <p>📜 פסוק חתימה: <b>"כי לא בחיל ולא בכֹח כי אם ברוחי אמר ה׳ צבאות."</b> (זכריה ד׳ ו׳)</p>
+        </div>
+      </div>
+      <div class="sub">© GoMag (GM). Designed for clarity, unity, and light.</div>
+    </footer>
+  </div>
+
+  <script>
+    'use strict';
+
+    // ===== UTILITY CLASSES =====
+    class Toast {
+      constructor() {
+        this.container = null;
+      }
+
+      show(message, isError = false) {
+        if (this.container) {
+          this.container.remove();
+        }
+
+        this.container = document.createElement('div');
+        this.container.className = `toast ${isError ? 'error' : ''}`;
+        this.container.setAttribute('role', 'status');
+        this.container.setAttribute('aria-live', 'polite');
+        this.container.textContent = message;
+        document.body.appendChild(this.container);
+
+        // Trigger animation
+        requestAnimationFrame(() => {
+          this.container.classList.add('show');
+        });
+
+        // Auto-remove after delay
+        setTimeout(() => {
+          this.hide();
+        }, 2500);
+      }
+
+      hide() {
+        if (this.container) {
+          this.container.classList.remove('show');
+          setTimeout(() => {
+            if (this.container) {
+              this.container.remove();
+              this.container = null;
+            }
+          }, 300);
+        }
+      }
+    }
+
+    class ThemeManager {
+      constructor() {
+        this.isDark = true;
+        this.init();
+      }
+
+      init() {
+        // Check for saved preference
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light') {
+          this.toggle();
+        }
+      }
+
+      toggle() {
+        this.isDark = !this.isDark;
+        const root = document.documentElement;
+        const body = document.body;
+
+        if (this.isDark) {
+          // Reset to dark
+          root.style.removeProperty('--bg');
+          root.style.removeProperty('--bg2');
+          root.style.removeProperty('--card');
+          root.style.removeProperty('--text');
+          root.style.removeProperty('--muted');
+          body.style.background =
+            'radial-gradient(1200px 600px at 10% -10%, #1b2440 0%, transparent 60%),' +
+            'radial-gradient(1000px 600px at 110% 10%, #261b40 0%, transparent 60%),' +
+            'linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%)';
+          localStorage.setItem('theme', 'dark');
+        } else {
+          // Switch to light
+          root.style.setProperty('--bg', '#f6f8ff');
+          root.style.setProperty('--bg2', '#e6ebff');
+          root.style.setProperty('--card', '#ffffff');
+          root.style.setProperty('--text', '#0c1222');
+          root.style.setProperty('--muted', '#394868');
+          body.style.background = 'linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%)';
+          localStorage.setItem('theme', 'light');
+        }
+      }
+    }
+
+    // ===== INITIALIZATION =====
+    const toast = new Toast();
+    const themeManager = new ThemeManager();
+
+    // ===== SMOOTH SCROLLING =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // ===== COPY HASHTAGS =====
+    const copyHashtagsBtn = document.getElementById('copyHashtags');
+    const hashBox = document.getElementById('hashBox');
+
+    copyHashtagsBtn.addEventListener('click', async () => {
+      const text = hashBox.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+        toast.show('שטאגים הועתקו ✔');
+      } catch (err) {
+        toast.show('שגיאה בהעתקה', true);
+        console.error('Failed to copy:', err);
+      }
+    });
+
+    // ===== TOGGLE DIRECTION =====
+    const toggleDirBtn = document.getElementById('toggleDir');
+    toggleDirBtn.addEventListener('click', () => {
+      const html = document.documentElement;
+      const currentDir = html.dir;
+      html.dir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+      toast.show(`כיוון הטקסט: ${html.dir.toUpperCase()}`);
+    });
+
+    // ===== TOGGLE THEME =====
+    const toggleThemeBtn = document.getElementById('toggleTheme');
+    toggleThemeBtn.addEventListener('click', () => {
+      themeManager.toggle();
+      toast.show('מצב תצוגה הוחלף');
+    });
+
+    // ===== KEYBOARD SHORTCUTS =====
+    document.addEventListener('keydown', (e) => {
+      // Ctrl/Cmd + H: Copy hashtags
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'h') {
+        e.preventDefault();
+        copyHashtagsBtn.click();
+      }
+
+      // Ctrl/Cmd + T: Toggle theme
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 't') {
+        e.preventDefault();
+        toggleThemeBtn.click();
+      }
+
+      // Escape: Close any open details
+      if (e.key === 'Escape') {
+        document.querySelectorAll('details[open]').forEach(detail => {
+          detail.removeAttribute('open');
+        });
+      }
+    });
+
+    // ===== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =====
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.card').forEach(card => {
+        observer.observe(card);
+      });
+    }
+
+    // ===== PERFORMANCE: Debounce scroll events =====
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) {
+        cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = requestAnimationFrame(() => {
+        // Any scroll-based logic here
+      });
+    }, { passive: true });
+  </script>
+</body>
+
+</html>
